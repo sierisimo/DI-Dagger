@@ -2,22 +2,20 @@ package com.sierisimo.wizeline.di.entities
 
 class Writer {
     var pen: Pen
-    var ink: Ink
 
     var paper: Paper
 
     init {
-        ink = Ink()
-        ink.color = "Red"
+        paper = Paper()
+
+        val ink = Ink()
+        ink.color = "Black"
 
         pen = Pen()
         pen.ink = ink
-
-        paper = Paper()
-        paper.type = "A4"
     }
 
-    fun writeNovel() {
+    fun write() {
         // Do stuff with the tools
     }
 }
