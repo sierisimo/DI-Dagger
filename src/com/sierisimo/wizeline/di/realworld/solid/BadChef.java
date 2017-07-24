@@ -3,7 +3,7 @@ package com.sierisimo.wizeline.di.realworld.solid;
 import com.sierisimo.wizeline.di.realworld.solid.liskov.Duck;
 import com.sierisimo.wizeline.di.realworld.solid.liskov.Ostrich;
 
-public class Chef {
+public class BadChef {
     public void cookDuck(Duck duck) {
 
     }
