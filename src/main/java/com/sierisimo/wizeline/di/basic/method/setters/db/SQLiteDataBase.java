@@ -1,4 +1,4 @@
-package com.sierisimo.wizeline.di.basic.method.db;
+package com.sierisimo.wizeline.di.basic.method.setters.db;
 
 public class SQLiteDataBase {
     private String userName;

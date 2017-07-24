@@ -1,8 +1,8 @@
 package com.sierisimo.wizeline.di.basic.external;
 
-import com.sierisimo.wizeline.di.basic.method.credit.CreditCardProcessor;
-import com.sierisimo.wizeline.di.basic.method.db.SQLiteDataBase;
-import com.sierisimo.wizeline.di.basic.method.sync.ServiceSync;
+import com.sierisimo.wizeline.di.basic.method.setters.credit.CreditCardProcessor;
+import com.sierisimo.wizeline.di.basic.method.setters.db.SQLiteDataBase;
+import com.sierisimo.wizeline.di.basic.method.setters.sync.ServiceSync;
 
 public class CreditCardExecutor {
     public static void executeBySetter_1() {

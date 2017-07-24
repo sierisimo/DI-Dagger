@@ -1,6 +1,6 @@
-package com.sierisimo.wizeline.di.basic.method.sync;
+package com.sierisimo.wizeline.di.basic.method.setters.sync;
 
-import com.sierisimo.wizeline.di.basic.method.db.SQLiteDataBase;
+import com.sierisimo.wizeline.di.basic.method.setters.db.SQLiteDataBase;
 
 public class ServiceSync {
     private SQLiteDataBase sqLiteDataBase;
