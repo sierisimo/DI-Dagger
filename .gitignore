@@ -5,3 +5,6 @@
 /lib/
 
 /out/
+/.gradle/
+/gradle/
+/.gradletasknamecache
