@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DI Wizeline</string>
+
+    <string name="text_crypto_name">BitCoin</string>
+</resources>
