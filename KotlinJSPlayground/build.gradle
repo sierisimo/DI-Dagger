@@ -1,0 +1,55 @@
+group 'KotlinJSPlayground'
+version '0.0.1'
+
+buildscript {
+    ext.kotlin_version = '1.1.51'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin2js'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+}
+
+dependencies {
+    def kotlinx_html_version = "0.6.4"
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+
+    // include for client-side
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:${kotlinx_html_version}"
+}
+
+task assembleWeb(type: Sync) {
+    configurations.compile.each { File file ->
+        from(zipTree(file.absolutePath), {
+            includeEmptyDirs = false
+            include { fileTreeElement ->
+                def path = fileTreeElement.path
+                path.endsWith(".js") && (path.startsWith("META-INF/resources/") ||
+                        !path.startsWith("META-INF/"))
+            }
+        })
+    }
+    from compileKotlin2Js.destinationDir
+    into "${projectDir}/web"
+
+    dependsOn classes
+}
+
+compileKotlin2Js {
+    kotlinOptions.outputFile = "${projectDir}/web/octuber-kug.js"
+    kotlinOptions.moduleKind = "amd"
+    kotlinOptions.sourceMap = true
+}
+
+assemble.dependsOn assembleWeb
